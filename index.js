@@ -10,6 +10,7 @@ const observe = new IntersectionObserver((entries) => {
 document.querySelectorAll('.anim').forEach((el) => observe.observe(el));
 
 window.onscroll = () => {
+    // Totally not taken from some random website
     for(let i = 0; i < document.querySelectorAll('.scroll').length; i++) {
         const el = document.querySelectorAll('.scroll').item(i);
         const scrollTop = document.documentElement.scrollTop;
@@ -17,12 +18,7 @@ window.onscroll = () => {
 
         let opacity = 1;
 
-        if(scrollTop > distTop) {
-            opacity -= (scrollTop - distTop) / el.clientHeight;
-        }
-
-        if(opacity >= 0) {
-            el.style.opacity = opacity;
-        }
+        if(scrollTop > distTop) opacity -= (scrollTop - distTop) / el.clientHeight;
+        if(opacity >= 0) el.style.opacity = opacity;
     }
 }

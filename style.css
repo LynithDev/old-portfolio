@@ -26,6 +26,15 @@ html, head, body {
     :root {
         font-size: 1.5vh;
     }
+    #home .container.horizontal {
+        margin: 0 5%;
+    }
+    body nav li {
+        margin: 0 2%;
+    }
+    body nav a {
+        padding: 0.5rem;
+    }
 }
 
 body {
@@ -186,9 +195,10 @@ button, a {
     border: 0.2rem solid var(--accent);
     transition: 0.3s;
     text-decoration: none;
+    outline: none;
 }
 
-button:hover {
+button:hover, a:hover {
     opacity: 0.7;
     cursor: pointer;
 }

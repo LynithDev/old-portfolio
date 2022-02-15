@@ -156,7 +156,7 @@ section.light .background, section.light .background path { fill: var(--main); }
     border-radius: 50%;
 }
 
-h1, h2, h3, p, button {
+h1, h2, h3, p, button, a {
     padding: 0;
     margin: 1.5% 0;
 }

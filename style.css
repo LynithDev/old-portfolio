@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 :root {
     --main: #191D27;
     --accent: #F05050;
     --second: #1D222E;
+    --text-30: rgba(255,255,255,0.5);
+    --text-60: rgba(255,255,255,0.66);
+    --text: rgba(255,255,255,0.99);
     font-size: 1vw;
 }
 
@@ -22,26 +27,11 @@ html, head, body {
 
 .anim.visible { transform: translate(0%, 0%) scale(1); opacity: 1;}
 
-@media only screen and (max-width: 800px) {
-    :root {
-        font-size: 1.5vh;
-    }
-    #home .container.horizontal {
-        margin: 0 5%;
-    }
-    body nav li {
-        margin: 0 2%;
-    }
-    body nav a {
-        padding: 0.5rem;
-    }
-}
-
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: white;
+    color: var(--text);
     background: var(--main);
     font-family: 'Manrope';
     display: flex;
@@ -90,7 +80,7 @@ nav ul:last-child {
 
 nav a {
     text-decoration: none;
-    color: rgba(255,255,255,0.3);
+    color: var(--text-30);
     font-size: 0.75rem;
     font-weight: 600;
     transition: 0.3s;
@@ -104,7 +94,7 @@ nav a:hover {
 }
 
 nav a.active {
-    color: rgba(255,255,255,0.9);
+    color: var(--text);
 }
 
 nav li {
@@ -156,13 +146,13 @@ section.light .background, section.light .background path { fill: var(--main); }
     border-radius: 50%;
 }
 
-h1, h2, h3, p, button, a {
+h1, h2, p, button, a {
     padding: 0;
     margin: 1.5% 0;
 }
 
 p {
-    color: rgba(255,255,255,0.3);
+    color: var(--text-30);
     font-weight: 500;
     font-size: 1rem;
 }
@@ -175,7 +165,7 @@ h1 {
 h2 {
     font-weight: 500;
     font-size: 1.25rem;
-    color: rgba(255,255,255,0.66)
+    color: var(--text-60);
 }
 
 section#home > div > div {
@@ -203,7 +193,7 @@ button:hover, a:hover {
     cursor: pointer;
 }
 
-h4 {
+h3 {
     margin: 0;
     padding: 0;
     font-size: 2rem;
@@ -254,7 +244,7 @@ h4 {
     max-width: 80%;
 }
 
-.cards li a {
+.cards li a, .cards li button {
     position: absolute;
     bottom: calc(3rem / 2);
     font-size: 0.75rem;
@@ -268,11 +258,11 @@ h4 {
     cursor: pointer;
 }
 
-.cards li a.disabled {
+.cards li a.disabled, .cards li button.disabled {
     opacity: 0.7;
 }
 
-.cards li a.disabled:hover {cursor: not-allowed;}
+.cards li a.disabled:hover, .cards li button.disabled:hover {cursor: not-allowed;}
 
 .cards li img {
     width: 30%;
@@ -281,4 +271,39 @@ h4 {
     margin-bottom: 5%;
     border-radius: 5px;
 }
-
+@media only screen and (max-width: 800px) {
+    :root {
+        font-size: 2vh;
+    }
+    .pfp {
+        width: 6rem;
+        height: 6rem;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav ul {
+        width: auto;
+    }
+    #home .container.horizontal {
+        margin: 0 5%;
+    }
+    body nav li {
+        margin: 0 2%;
+    }
+    body nav a {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    nav h4 {
+        display: none;
+        /* font-size: 1.25rem; */
+    }
+    .cards li a, .cards li button {
+        position: unset;
+        font-size: 1rem;
+    }
+    .cards p {
+        font-size: 1rem;
+    }
+}

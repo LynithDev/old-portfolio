@@ -9,6 +9,10 @@
 
 <style>
     button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         max-height: 50px;
         padding: 15px;
@@ -23,6 +27,7 @@
         font-size: 100%;
         font-family: 'Raleway', sans-serif;
         letter-spacing: 1px;
+        text-align: center;
     }
 
     button:hover {

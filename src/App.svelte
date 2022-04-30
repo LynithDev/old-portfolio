@@ -1,6 +1,6 @@
 <script>
     import Avatar from './assets/avatar.png';
-import CssIcon from './assets/CSSIcon.svelte';
+    import CssIcon from './assets/CSSIcon.svelte';
     import React from './assets/React.svelte';
     import Dart from './assets/Dart.svelte';
     import Button from './lib/Button.svelte';

@@ -133,3 +133,7 @@ button {
     transition: 0.3s;
     height: auto;
 }
+
+.bx {
+    width: 100%;
+}

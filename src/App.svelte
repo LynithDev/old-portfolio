@@ -55,11 +55,11 @@
 
     <section id="contact">
         <div class="center">
-            <h1>Contact</h1>
+            <h1>Socials</h1>
             <div class="icons-container">
-                <div data-name="Reddit"><Reddit /></div>
-                <div data-name="GitHub"><GitHub /></div>
-                <div data-name="Discord"><Discord /></div>
+                <a href="https://reddit.com/u/lynithdev" data-name="Reddit"><Reddit /></a>
+                <a href="https://github.com/LynithDev" data-name="GitHub"><GitHub /></a>
+                <div data-name="Lynith#0231"><Discord /></div>
             </div>
         </div>
     </section>

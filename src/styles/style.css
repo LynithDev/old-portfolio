@@ -34,7 +34,7 @@ body {
 }
 
 .background { background: linear-gradient(180deg, #F3F3F3 0%, #F9D7D7 100%); }
-body.dark-theme .background { background: linear-gradient(180deg, #404447 0%, #2B2222 100%); }
+body.dark-theme .background { background: linear-gradient(180deg, #201e1e 0%, #331919 100%); }
 
 section {
     display: flex;
@@ -94,7 +94,7 @@ button {
     max-width: 600px;
 }
 
-.icons-container > div {
+.icons-container > div, .icons-container a {
     margin: 20px;
     padding: 20px;
     width: 50px;
@@ -109,29 +109,42 @@ button {
     transition: 0.3s;
 }
 
-.icons-container > div:hover {
+body.dark-theme .icons-container > div, body.dark-theme .icons-container a {
+    background-color: #2B2222;
+    color: white;
+}
+
+.icons-container > div:hover, .icons-container > a:hover {
     filter: brightness(0.92);
 }
 
-.icons-container > div::after {
+.icons-container > div::after, .icons-container > a::after  {
     content: attr(data-name);
     transition: 0.3s;
     opacity: 0;
     height: 0;
     font-size: 12px;
     font-weight: 600;
-    margin: 2px;
 }
 
-.icons-container > div:hover::after {
+.icons-container > div:hover::after, .icons-container > a:hover::after {
     opacity: 1;
+    line-height: 150%;
 }
 
-.icons-container > div:hover > svg {
+.icons-container > div > svg, .icons-container > a > svg {
+    height: 40px;
+}
+
+.icons-container > div:hover > svg, .icons-container > a:hover > svg {
     height: 30px;
 }
 
-.icons-container > div > svg, .icons-container > div > svg * {
+[data-name="GitHub"] > svg > path {
+    fill: #fff;
+}
+
+.icons-container > div > svg, .icons-container > div > svg *, .icons-container > a > svg, .icons-container > a > svg * {
     transition: 0.3s;
 }
 
@@ -139,10 +152,15 @@ button {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 @media only screen and (max-width: 800px) {
     h1 { font-size: 48px; }
     h4 {  font-size: 18px; }
-    .icons-container > div {
+    .icons-container > div, .icons-container > a {
         margin: 10px;
         padding: 10px;
         width: 40px;

@@ -137,3 +137,15 @@ button {
 .bx {
     width: 100%;
 }
+
+@media only screen and (max-width: 800px) {
+    h1 { font-size: 48px; }
+    h4 {  font-size: 18px; }
+    .tech > div {
+        margin: 10px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+}
+

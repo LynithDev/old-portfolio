@@ -34,4 +34,13 @@
         filter: brightness(0.92);
         cursor: pointer;
     }
+
+    @media only screen and (max-width: 800px) {
+        button {
+            max-height: 40px;
+            font-size: 80%;
+            width: 80%;
+        }
+    }
+
 </style>

@@ -161,7 +161,7 @@ body.dark-theme .icons-container > div, body.dark-theme .icons-container a {
     height: 30px;
 }
 
-[data-name="GitHub"] > svg > path {
+body.dark-theme [data-name="GitHub"] > svg > path {
     fill: #fff;
 }
 

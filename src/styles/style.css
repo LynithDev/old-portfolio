@@ -84,7 +84,7 @@ button {
     align-content: center;
 }
 
-.tech {
+.icons-container {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -94,7 +94,7 @@ button {
     max-width: 600px;
 }
 
-.tech > div {
+.icons-container > div {
     margin: 20px;
     padding: 20px;
     width: 50px;
@@ -109,29 +109,30 @@ button {
     transition: 0.3s;
 }
 
-.tech > div:hover {
+.icons-container > div:hover {
     filter: brightness(0.92);
 }
 
-.tech > div::after {
+.icons-container > div::after {
     content: attr(data-name);
     transition: 0.3s;
     opacity: 0;
     height: 0;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 2px;
 }
 
-.tech > div:hover::after {
+.icons-container > div:hover::after {
     opacity: 1;
-    height: auto;
 }
 
-.tech > div:hover > svg {
+.icons-container > div:hover > svg {
     height: 30px;
 }
 
-.tech > div > svg, .tech > div > svg * {
+.icons-container > div > svg, .icons-container > div > svg * {
     transition: 0.3s;
-    height: auto;
 }
 
 .bx {
@@ -141,7 +142,7 @@ button {
 @media only screen and (max-width: 800px) {
     h1 { font-size: 48px; }
     h4 {  font-size: 18px; }
-    .tech > div {
+    .icons-container > div {
         margin: 10px;
         padding: 10px;
         width: 40px;

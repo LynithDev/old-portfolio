@@ -15,11 +15,16 @@
   import Python from "./assets/Python.svelte";
   import Svelte from "./assets/Svelte.svelte";
   import SASS from "./assets/SASS.svelte";
+  import Discord from "./assets/Discord.svelte";
+  import GitHub from "./assets/GitHub.svelte";
+  import Reddit from "./assets/Reddit.svelte";
+
 </script>
 
 <main>
     <div class="background" />
     <Theme />
+
     <section id="home">
         <div class="center">
         <img class="avatar" src={Avatar} alt="" />
@@ -28,28 +33,36 @@
         <Button on:click={() => (location.hash = "code")}>Skills</Button>
         </div>
     </section>
+
     <section id="code">
         <div class="center">
-        <h1>Technologies</h1>
-        <div class="tech">
-            <div data-name="React"><React /></div>
-            <div data-name="CSS"><CssIcon /></div>
-            <div data-name="Dart"><Dart /></div>
-            <div data-name="HTML"><HTML /></div>
-            <div data-name="JavaScript"><Js /></div>
-            <div data-name="Linux"><Linux /></div>
-            <div data-name="MongoDB"><Mongo /></div>
-            <div data-name="Python"><Python /></div>
-            <div data-name="Sass"><SASS /></div>
-            <div data-name="Svelte"><Svelte /></div>
-            <div data-name="TypeScript"><Ts /></div>
-        </div>
+            <h1>Technologies</h1>
+            <div class="icons-container">
+                <div data-name="React"><React /></div>
+                <div data-name="CSS"><CssIcon /></div>
+                <div data-name="Dart"><Dart /></div>
+                <div data-name="HTML"><HTML /></div>
+                <div data-name="JavaScript"><Js /></div>
+                <div data-name="Linux"><Linux /></div>
+                <div data-name="MongoDB"><Mongo /></div>
+                <div data-name="Python"><Python /></div>
+                <div data-name="Sass"><SASS /></div>
+                <div data-name="Svelte"><Svelte /></div>
+                <div data-name="TypeScript"><Ts /></div>
+            </div>
         </div>
     </section>
+
     <section id="contact">
         <div class="center">
-        <h1>Contact</h1>
+            <h1>Contact</h1>
+            <div class="icons-container">
+                <div data-name="Reddit"><Reddit /></div>
+                <div data-name="GitHub"><GitHub /></div>
+                <div data-name="Discord"><Discord /></div>
+            </div>
         </div>
     </section>
+
     <Navigation />
 </main>

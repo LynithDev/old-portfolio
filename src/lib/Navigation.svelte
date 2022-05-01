@@ -57,8 +57,13 @@
         position: fixed;
         bottom: 4vh;
         left: 50%;
-        transform: translateX(-50%);
         z-index: 999;
+        opacity: 0;
+        transform: translate3d(-50%, -100%, 0);
+        animation-name: fadeInDown;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-delay: 0.5s;
     }
 
     .navbar button {
@@ -70,7 +75,7 @@
         border: none;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
         transition: all 0.2s ease;
-        background-color: #fefefe;
+        background: #fefefe;
     }
 
     .navbar button:hover {
@@ -117,4 +122,17 @@
         font-size: 16px;
         }
     }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(-50%, -100%, 0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+
 </style>

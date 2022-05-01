@@ -27,10 +27,10 @@
 
     <section id="home">
         <div class="center">
-        <img class="avatar" src={Avatar} alt="" />
-        <h1>Lynith</h1>
-        <h4>A developer, designer and Linux enthusiast</h4>
-        <Button on:click={() => (location.hash = "code")}>Skills</Button>
+            <img class="avatar" src={Avatar} alt="" />
+            <h1>Lynith</h1>
+            <h4>A developer, designer and Linux enthusiast</h4>
+            <Button on:click={() => (location.hash = "code")}>Skills</Button>
         </div>
     </section>
 

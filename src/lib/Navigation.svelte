@@ -33,7 +33,7 @@
                         history.pushState(null, null, document.location.pathname + '#' + section.id);
                     }
                 });
-            }, 500)
+            }, 150)
         });
     });
 

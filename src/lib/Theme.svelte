@@ -51,6 +51,7 @@
     transition: all 0.2s ease;
     font-size: 32px;
     background-color: #fefefe;
+    z-index: 9999;
   }
 
   button:hover {

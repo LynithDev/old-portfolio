@@ -1,5 +1,4 @@
 <script>
-  import Avatar from "./assets/avatar.png";
   import CssIcon from "./assets/CSSIcon.svelte";
   import React from "./assets/React.svelte";
   import Dart from "./assets/Dart.svelte";
@@ -26,7 +25,7 @@
 
     <section id="home">
         <div class="center">
-            <img class="avatar" src={Avatar} alt="" />
+            <img class="avatar" src={'/avatar.png'} alt="" />
             <h1>Lynith</h1>
             <h4>A developer, designer and Linux enthusiast</h4>
             <Button on:click={() => (location.hash = "code")}>Skills</Button>

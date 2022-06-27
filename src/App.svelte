@@ -22,7 +22,6 @@
 </script>
 
 <main>
-    <div class="background" />
     <Theme />
 
     <section id="home">

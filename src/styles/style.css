@@ -13,8 +13,15 @@ body {
     font-family: 'Raleway', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
-    background: #2B2222;
+    
+    height: 100%;
+    background-image: linear-gradient(180deg, #F3F3F3 0%, #f5afaf 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
+
+body.dark-theme { background-image: linear-gradient(180deg, #201e1e 0%, #331919 100%); }
 
 .avatar {
     width: 180px;
@@ -41,21 +48,6 @@ body {
         transform: none;
     }
 }
-
-.background {
-    height: 130%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.background { background: linear-gradient(180deg, #F3F3F3 0%, #F9D7D7 100%); }
-body.dark-theme .background { background: linear-gradient(180deg, #201e1e 0%, #331919 100%); }
 
 section {
     display: flex;
@@ -136,7 +128,7 @@ body.dark-theme .icons-container > div, body.dark-theme .icons-container a {
 }
 
 .icons-container > div:hover, .icons-container > a:hover {
-    filter: brightness(0.92);
+    filter: brightness(0.97);
 }
 
 .icons-container > div::after, .icons-container > a::after  {

@@ -1,0 +1,99 @@
+:root {
+    font-family: 'Manrope', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #2F2D2D;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, ul, h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 34px;
+    font-family: 'Poppins';
+}
+
+p {
+    font-weight: 400;
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+body {
+    overflow-x: hidden;
+    background: radial-gradient(circle at right, #eba8a8 0%, #efe7e7 66.49%)
+}
+
+section {
+    min-height: 100vh;
+    height: 1px;
+}
+
+a, div, span, p, h1, h2, h3, h4, h5, h6 {
+    color: #2F2D2D;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+*::selection {
+    background-color: #F48989;
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    :root, body, html, head {
+        font-size: 14px;
+    }
+}
+
+/* Animation stuff */
+
+[data-animate].fade, [data-animate-container].fade > * {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+[data-in-view="true"].fade, .fade > [data-in-view="true"] {
+    opacity: 1;
+}
+
+
+[data-animate].left, [data-animate-container].left > * {
+    transform: translate(-50%, 0);
+}
+
+[data-in-view="true"].left, .left > [data-in-view="true"] {
+    transform: translate(0, 0);
+}
+
+
+[data-animate].top, [data-animate-container].top > * {
+    transform: translate(0, -50%);
+}
+
+[data-in-view="true"].top, .top > [data-in-view="true"] {
+    transform: translate(0, 0);
+}
+
+
+[data-animate].bottom, [data-animate-container].bottom > * {
+    transform: translate(0, 50%);
+}
+
+[data-in-view="true"].bottom, .bottom > [data-in-view="true"] {
+    transform: translate(0, 0);
+}

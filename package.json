@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-v7",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "@tsconfig/svelte": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-svelte": "^2.10.0",
+    "postcss": "^8.4.18",
+    "postcss-pxtorem": "^6.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "svelte": "^3.49.0",
+    "svelte-check": "^2.8.1",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  }
+}

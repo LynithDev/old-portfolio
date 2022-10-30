@@ -3,7 +3,12 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import postcss from 'rollup-plugin-postcss';
 import pxtorem from 'postcss-pxtorem';
 
-// https://vitejs.dev/config/
+// PLEASE SOMEONE TELL ME WHY POSTCSS SPITS OUT AN ERROR DURING BUILD BUT DURING DEV IT WORKS???
+// PLEASE SOMEONE TELL ME WHY POSTCSS SPITS OUT AN ERROR DURING BUILD BUT DURING DEV IT WORKS???
+// PLEASE SOMEONE TELL ME WHY POSTCSS SPITS OUT AN ERROR DURING BUILD BUT DURING DEV IT WORKS???
+// PLEASE SOMEONE TELL ME WHY POSTCSS SPITS OUT AN ERROR DURING BUILD BUT DURING DEV IT WORKS???
+// PLEASE SOMEONE TELL ME WHY POSTCSS SPITS OUT AN ERROR DURING BUILD BUT DURING DEV IT WORKS???
+
 export default defineConfig({
     plugins: [
         svelte(),
@@ -11,10 +16,9 @@ export default defineConfig({
     build: {
         rollupOptions: {
             plugins: [
-                postcss({
-                    minimize: true,
-                    config: true,
-                }),
+                // postcss({
+                //     config: true,
+                // }),
             ],
         },
     },

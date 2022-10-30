@@ -11,24 +11,6 @@
             image: '/img/lynith.png',
             link: '#',
         },
-        {
-            name: 'This website',
-            icons: [SvelteIcon, TypeScriptIcon, FigmaIcon],
-            image: '/img/lynith.png',
-            link: '#',
-        },
-        {
-            name: 'This website',
-            icons: [SvelteIcon, TypeScriptIcon, FigmaIcon],
-            image: '/img/lynith.png',
-            link: '#',
-        },
-        {
-            name: 'This website',
-            icons: [SvelteIcon, TypeScriptIcon, FigmaIcon],
-            image: '/img/lynith.png',
-            link: '#',
-        },
     ];
 </script>
 <section id="projects">

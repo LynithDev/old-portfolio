@@ -17,6 +17,7 @@
         animation-duration: 12s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
+        z-index: -1;
     }
 
     .bottom { bottom: -30vw; }

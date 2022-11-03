@@ -37,7 +37,10 @@ p {
 
 body {
     overflow-x: hidden;
-    background: radial-gradient(circle at right, #eba8a8 0%, #efe7e7 66.49%)
+    background: radial-gradient(circle at right,#eba8a8 0%,#efe7e7 66.49%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overscroll-behavior: none;
 }
 
 section {

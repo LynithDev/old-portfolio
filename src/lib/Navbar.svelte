@@ -72,7 +72,7 @@
     <ul bind:this={list}>
         <li> <a class="active" href="#home">Home</a> </li>
         <li> <a href="#projects">Projects</a> </li>
-        <li> <a data-no-underline="true" target="_blank" href="https://ko-fi.com/lynith/commissions">Commissions</a> </li>
+        <li> <a data-no-underline="true" href="https://ko-fi.com/lynith/commissions">Commissions</a> </li>
         <span class="underline" bind:this={underline}></span>
     </ul>
 </nav>

@@ -13,8 +13,8 @@
             <div class="circle fade top" data-animate data-animate-queue="1" data-animate-delay="0"><span></span></div>
             <div data-animate data-animate-delay="500" class="fade bottom">
                 <div class="buttons">
-                    <a target="_blank" href="https://ko-fi.com/lynith/commissions"><CoinIcon /> <span>Commission</span></a>
-                    <a target="_blank" href="https://ko-fi.com/lynith"><HeartIcon /> <span>Donate</span></a>
+                    <a href="https://ko-fi.com/lynith/commissions"><CoinIcon /> <span>Commission</span></a>
+                    <a href="https://ko-fi.com/lynith"><HeartIcon /> <span>Donate</span></a>
                 </div>
             </div>
         </div>

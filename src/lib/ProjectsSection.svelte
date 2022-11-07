@@ -1,5 +1,6 @@
 <script>
     import FigmaIcon from './icons/FigmaIcon.svelte';
+    import SassIcon from './icons/SassIcon.svelte';
     import SvelteIcon from './icons/SvelteIcon.svelte';
     import TypeScriptIcon from './icons/TypeScriptIcon.svelte';
     import ProjectCard from './ProjectCard.svelte';
@@ -10,6 +11,12 @@
             icons: [SvelteIcon, TypeScriptIcon, FigmaIcon],
             image: '/img/lynith.png',
             link: '#',
+        },
+        {
+            name: 'Webimate',
+            icons: [TypeScriptIcon, SassIcon],
+            image: '/img/webimate.png',
+            link: 'https://github.com/LynithDev/webimate-lib',
         },
     ];
 </script>

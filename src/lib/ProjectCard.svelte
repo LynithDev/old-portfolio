@@ -98,6 +98,7 @@
         width: 100%;
         object-fit: cover;
         border-radius: 8px;
+        aspect-ratio: 16/9;
     }
 
     div > a > :global(svg) {

@@ -1,36 +1,48 @@
-<script>
-    import FigmaIcon from './icons/FigmaIcon.svelte';
-    import SassIcon from './icons/SassIcon.svelte';
-    import SvelteIcon from './icons/SvelteIcon.svelte';
-    import TypeScriptIcon from './icons/TypeScriptIcon.svelte';
+<script lang="ts">
+    import { onMount } from 'svelte';
     import ProjectCard from './ProjectCard.svelte';
 
-    const projects = [
-        {
-            name: 'This website',
-            icons: [SvelteIcon, TypeScriptIcon, FigmaIcon],
-            image: '/img/lynith.png',
-            link: '#',
-        },
-        {
-            name: 'Webimate',
-            icons: [TypeScriptIcon, SassIcon],
-            image: '/img/webimate.png',
-            link: 'https://github.com/LynithDev/webimate-lib',
-        },
-    ];
+    let data: {
+        icons: { [key: string]: string },
+        projects: {
+            name: string,
+            thumbnail: string,
+            icons: string[],
+            link: string,
+            repository: string,
+        }[],
+    };
+
+    onMount(async () => {
+        try {
+            const res = await (await fetch('https://raw.githubusercontent.com/LynithDev/meta-data/master/projects.json')).json();
+            data = res;
+        } catch (e) {
+            console.error(e);
+        }
+    });
+
+    const fetchText = async (url: string) => (await fetch(url)).text();
+
 </script>
 <section id="projects">
     <div>
         <h2 data-animate class="fade left" style="transition-delay: 500ms;">Projects</h2>
         <div data-animate-container class="fade left" data-animate-delay="800">
-            {#each projects as item}
-                <ProjectCard name={item.name} imgSrc={item.image} link={item.link}>
-                    {#each item.icons as icon}
-                        <svelte:component this={icon} />
-                    {/each}
-                </ProjectCard>
-            {/each}
+            {#if data}
+                {#each data.projects as item, index}
+                    <ProjectCard name={item.name} imgSrc={item.thumbnail} link={item.link} index={index}>
+                        {#each item.icons as icon}
+                            {#await fetchText(data.icons[icon])}
+                                <svg></svg>
+                            {:then svg}
+                                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                                {@html svg}
+                            {/await}
+                        {/each}
+                    </ProjectCard>
+                {/each}
+            {/if}
         </div>
     </div>
 </section>

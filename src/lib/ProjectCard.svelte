@@ -1,12 +1,22 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     import InfoIcon from './icons/InfoIcon.svelte';
 
     export let name: string;
     export let imgSrc: string;
     export let link: string;
+
+    export let index: number;
+    let div: HTMLDivElement;
+
+    onMount(() => {
+        const delay = (div.getAttribute('data-animate-delay') ? parseInt(div.getAttribute('data-animate-delay')) : 0) + (div.parentElement.getAttribute('data-animate-delay') ? parseInt(div.parentElement.getAttribute('data-animate-delay')) : 0);
+        div.style.transitionDelay = `${(400 * (index + 1)) + delay}ms`;
+        window.observer.observe(div);
+    });
 </script>
 
-<div>
+<div bind:this={div}>
     <div>
         <h3>{name}</h3>
         <span>

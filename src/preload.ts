@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     elements.push(...document.querySelectorAll('[data-animate]'));
     document.querySelectorAll('[data-animate-container]').forEach((container) => {
-        console.log(container, container.getAttribute('data-animate-delay'));
         for (let i = 0; i < container.children.length; i++) {
             const el = (container.children[i] as HTMLElement);
             const delay = (el.getAttribute('data-animate-delay') ? parseInt(el.getAttribute('data-animate-delay')) : 0) + (container.getAttribute('data-animate-delay') ? parseInt(container.getAttribute('data-animate-delay')) : 0);

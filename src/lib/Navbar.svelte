@@ -36,12 +36,15 @@
         navbar.classList[window.scrollY > 100 ? 'add' : 'remove']('floating');
 
         document.querySelectorAll('section').forEach((section) => {
-            if (section.getBoundingClientRect().top - window.scrollY <= 0) {
+            if (section.getBoundingClientRect().top + window.scrollY < window.scrollY + window.innerHeight / 2) {
                 if (scrollTimeout) clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
                     switch (section.id) {
                     case 'projects':
                         clickLink(navbar.querySelectorAll('a')[1]);
+                        break;
+                    case 'socials':
+                        clickLink(navbar.querySelectorAll('a')[2]);
                         break;
                     default:
                         clickLink(navbar.querySelectorAll('a')[0]);
@@ -61,8 +64,8 @@
 
             el.addEventListener('click', (e) => clickLink((e.target) as HTMLAnchorElement));
         });
-        window.addEventListener('resize', () => updateLine());
 
+        window.addEventListener('resize', () => updateLine());
         window.addEventListener('scroll', () => scroll());
     });
 </script>
@@ -70,15 +73,15 @@
 <nav bind:this={navbar} class="fade top" data-animate>
     <span>Lynith</span>
     <ul bind:this={list}>
-        <li> <a class="active" href="#home">Home</a> </li>
+        <li class="mobile_hide"> <a class="active" href="#home">Home</a> </li>
         <li> <a href="#projects">Projects</a> </li>
+        <li> <a href="#socials">Socials</a> </li>
         <li> <a data-no-underline="true" href="https://ko-fi.com/lynith/commissions">Commissions</a> </li>
         <span class="underline" bind:this={underline}></span>
     </ul>
 </nav>
 
 <style>
-
     nav {
         display: flex;
         flex-direction: row;
@@ -164,6 +167,10 @@
         nav:global(.floating) {
             min-height: 60px;
             height: 60px;
+        }
+
+        .mobile_hide {
+            display: none;
         }
 
         nav > ul > li {

@@ -3,6 +3,7 @@
     import HomeSection from './lib/HomeSection.svelte';
     import Navbar from './lib/Navbar.svelte';
     import ProjectsSection from './lib/ProjectsSection.svelte';
+    import SocialsSection from './lib/SocialsSection.svelte';
 </script>
 
 <Navbar />
@@ -11,6 +12,7 @@
     <HomeSection />
     <Circle bottom right />
     <ProjectsSection />
+    <SocialsSection />
 </main>
 
 <style>

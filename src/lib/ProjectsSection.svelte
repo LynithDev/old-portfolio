@@ -1,28 +1,14 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { getMetadata } from '../utils';
     import ProjectCard from './ProjectCard.svelte';
 
-    let data: {
-        icons: { [key: string]: string },
-        projects: {
-            name: string,
-            thumbnail: string,
-            icons: string[],
-            link: string,
-            repository: string,
-        }[],
-    };
+    const fetchText = async (url: string) => (await fetch(url)).text();
+    let data: Metadata | undefined;
 
     onMount(async () => {
-        try {
-            const res = await (await fetch('https://raw.githubusercontent.com/LynithDev/meta-data/master/projects.json')).json();
-            data = res;
-        } catch (e) {
-            console.error(e);
-        }
+        data = await getMetadata();
     });
-
-    const fetchText = async (url: string) => (await fetch(url)).text();
 
 </script>
 <section id="projects">

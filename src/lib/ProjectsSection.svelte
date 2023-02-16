@@ -17,7 +17,7 @@
         <div data-animate-container class="fade left" data-animate-delay="800">
             {#if data}
                 {#each data.projects as item, index}
-                    <ProjectCard name={item.name} imgSrc={item.thumbnail} link={item.link} index={index}>
+                    <ProjectCard name={item.name} imgSrc={item.thumbnail} link={item.link} index={index} github={item.repository && item.repository != '' ? item.repository : ''}>
                         {#each item.icons as icon}
                             {#await fetchText(data.icons[icon])}
                                 <svg></svg>

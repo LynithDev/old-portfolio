@@ -1,10 +1,12 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import Github from './icons/github.svelte';
     import InfoIcon from './icons/InfoIcon.svelte';
 
     export let name: string;
     export let imgSrc: string;
     export let link: string;
+    export let github: string = '';
 
     export let index: number;
     let div: HTMLDivElement;
@@ -25,6 +27,11 @@
     </div>
     <a href={link}>
         <img src={imgSrc} alt={`Screenshot of ${name}`}>
+        {#if github && github != ''}
+            <a href={github}>
+                <Github />
+            </a>
+        {/if}
         <InfoIcon />
     </a>
 </div>
@@ -89,10 +96,10 @@
         flex: 1;
     }
 
-    div > a:last-child {
+    /* div > a:last-child {
         position: relative;
         height: 100%;
-    }
+    } */
 
     img {
         width: 100%;
@@ -101,12 +108,31 @@
         aspect-ratio: 16/9;
     }
 
-    div > a > :global(svg) {
+    div > a > :global(svg), div > a > a {
         width: 20px;
         height: 20px;
         position: absolute;
         bottom: 20px;
         right: 20px;
+    }
+
+    div > a > a {
+        background: #FCF6F6;
+    }
+
+    div > a > a {
+        right: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+    }
+
+    div > a > a > :global(svg) {
+        filter: brightness(0);
+        bottom: 22px;
+        width: 16px;
+        height: 16px;
     }
 
     @media only screen and (max-width: 800px) {

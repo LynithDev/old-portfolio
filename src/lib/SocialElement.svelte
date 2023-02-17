@@ -1,23 +1,13 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-
     let div: HTMLDivElement;
-    export let index: number;
     export let link: string;
     export let name: string;
-
-    onMount(() => {
-        const delay = (div.getAttribute('data-animate-delay') ? parseInt(div.getAttribute('data-animate-delay')) : 0) + (div.parentElement.getAttribute('data-animate-delay') ? parseInt(div.parentElement.getAttribute('data-animate-delay')) : 0);
-        div.style.transitionDelay = `${(400 * (index + 1)) + delay}ms`;
-        window.observer.observe(div);
-    });
-
+    export let color: string;
 </script>
 
 <div bind:this={div}>
-    <a href={link}>
+    <a href={link} style={`color: ${color};`} data-name={name}>
         <slot />
-        <span>{name}</span>
     </a>
 </div>
 
@@ -25,37 +15,72 @@
     div {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
+        margin: 0 25px;
     }
 
     a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        background: #FCF6F6;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 9px;
-        padding: 8px 13px;
-        font-size: 24px;
-        margin: 6px 0;
         text-decoration: none;
+        position: relative;
+        height: 52px;
     }
 
     a > :global(svg) {
-        width: 32px;
-        height: 32px;
-        filter: brightness(0);
+        width: 52px;
+        height: 52px;
+        position: relative;
+        background-color: white;
+        border-radius: 100%;
+        border: none;
     }
 
-    span {
+    a:hover ~ :global(a) {
+        z-index: 1;
+    }
+
+    a:hover { z-index: 3; }
+
+    a::before {
+        content: attr(data-name);
+        font-size: 1.2rem;
         font-weight: 600;
-        margin-left: 5px;
+        position: absolute;
+        top: 50%;
+        height: 100%;
+        left: -10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 10px;
+        padding-right: 14px;
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: 0.3s;
+        border-radius: 100rem;
+        background-color: white;
+        z-index: -1;
+        text-align: right;
+        font-size: 24px;
+        color: attr(data-color);
+        pointer-events: none;
+    }
+
+    a:hover::before {
+        opacity: 1;
+        pointer-events: all;
+        padding-left: 70px;
+        /* z-index: 2; */
+    }
+
+    a:hover > :global(svg) {
+        z-index: 3;
+        position: relative;
+        background: white;
     }
 
     a:hover {
-        opacity: 0.8;
         cursor: pointer;
     }
 </style>

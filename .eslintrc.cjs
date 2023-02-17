@@ -57,6 +57,7 @@ module.exports = {
                 },
             },
         ],
+        'svelte/valid-compile': 'off',
         eqeqeq: 'off',
         'max-len': 'off',
         'no-underscore-dangle': 'off',

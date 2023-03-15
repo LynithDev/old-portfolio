@@ -52,7 +52,7 @@
                         <Reddit />
                     </SocialElement>
 
-                    <SocialElement name="Discord" link={'https://discord.gg/nvCdrr5r2a'} color="#5865F2" >
+                    <SocialElement name="Discord" link={'https://discord.gg/Pw9xvu3fwV'} color="#5865F2" >
                         <Discord />
                     </SocialElement>
                 </div>
